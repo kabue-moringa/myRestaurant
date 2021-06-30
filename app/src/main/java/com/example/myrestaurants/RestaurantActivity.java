@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,8 +17,6 @@ import butterknife.ButterKnife;
 public class RestaurantActivity extends AppCompatActivity {
 //    @BindView(R.id.locationTextView) TextView mLocationTextView;
     @BindView(R.id.listView) ListView mListView;
-
-
     private String[] restaurants = new String[] {"Mi Mero Mole", "Mother's Bistro",
             "Life of Pie", "Screen Door", "Luc Lac", "Sweet Basil",
             "Slappy Cakes", "Equinox", "Miss Delta's", "Andina",
@@ -30,12 +29,10 @@ protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_restaurant);
     ButterKnife.bind(this);
+    MyRestaurantsArrayAdapter adapter = new MyRestaurantsArrayAdapter(this, android.R.layout.simple_list_item_1, restaurants, cuisines); // the arguments must match constructor's parameters!
+//    ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, restaurants);
+    mListView.setAdapter((ListAdapter) adapter);
 
-//    mListView = (ListView) findViewById(R.id.listView);
-//    mLocationTextView = (TextView) findViewById(R.id.locationTextView);
-
-    ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, restaurants);
-    mListView.setAdapter(adapter);
 
     mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
         @Override
