@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.myrestaurants.MainActivity"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.myrestaurants.RestaurantActivity"
     android:background="#000000">
 
     <ImageView
@@ -22,7 +23,24 @@
         android:textColor="@color/purple_200"
         android:textSize="40sp"
         android:textStyle="bold"
+        android:id="@+id/appNameTextView"
         android:text="MyRestaurant" />
+
+
+
+
+    <EditText
+        android:id="@+id/locationEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@color/purple_500"
+        android:layout_above="@+id/findRestaurantsButton"
+        android:padding="5dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Enter Zip Code"
+        android:layout_centerHorizontal="true"/>
 
 
     <Button
@@ -35,20 +53,7 @@
         android:text="Find Restaurants"
         android:textColor="@color/black"/>
 
-    <EditText
-        android:id="@+id/locationEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:background="@color/purple_500"
-        android:layout_above="@+id/findRestaurantsButton"
-        android:textColor="teal_700"
-        android:padding="5dp"
-        android:layout_marginBottom="10dp"
-        android:hint="Enter Zip Code"
-        android:layout_centerHorizontal="true"
-        android:text="MyRestaurant" />
+
 
 
 </RelativeLayout>
